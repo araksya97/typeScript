@@ -3,14 +3,12 @@ import { createStore } from "redux";
 const defaultState = {
     types: []
 }
-const reducer = (state = defaultState, action) => {
+const reducer = (state:any = defaultState, action:any) => {
     switch (action.type) {
         case 'CHANGE_VALUE': {
-            const newUsers = [action.value, ...state.user];
-            
             return {
                 ...state,
-                user: newUsers,
+                types: action.value,
             }
         }
         default: return state
